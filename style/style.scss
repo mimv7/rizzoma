@@ -1,4 +1,4 @@
-/*глобальное исправление*/:root{box-sizing: border-box;}*,::before,::after{box-sizing:inherit;margin: 0;padding: 0;}li{list-style-type: none;}a{text-decoration:none ;}input{outline:none;}button{cursor: pointer;}input{cursor: pointer;}button{border: none;}/*глобальное исправление*/
+/*глобальное исправление*/:root{box-sizing: border-box;}*,::before,::after{box-sizing:inherit;margin: 0;padding: 0;}li{list-style-type: none;}a{text-decoration:none ;}input{outline:none;}button{cursor: pointer;}input{cursor: text;}button{border: none;}img{max-width: 100%;}/*глобальное исправление*/
 @font-face{
     font-family: Roboto;
     src: url(../fonts/Roboto-Medium.ttf);
@@ -11,7 +11,7 @@ body{
     font-family: $font;
 }
 .col{
-    max-width: 956px;
+    max-width: 971px;
     margin: 0 auto;
 }
 header{ 
@@ -91,12 +91,13 @@ main{
     .products{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content:space-between;
         color: #000;
     }
 }
 .card{
     margin: 5px 5px 10px 5px;
+    transition: .7s;
 }
 footer{
     background-color: #262626;
@@ -181,4 +182,33 @@ select{
     right: 25px;
     bottom: 25px;
     background: #59BD5A url(../image/icon/button.png) 50% 50% no-repeat;
+}
+.card:hover{
+    filter: contrast(60%);
+}
+button:hover{
+    background-color: rgb(236, 236, 236);
+    transition: .7s;
+}
+a:hover{
+    background-color: rgb(196, 193, 193);
+    transition: .7s;
+}
+@media(min-width:323px){
+    .col{
+        padding-left: 15px;
+    }
+}
+@media (max-width:322px){
+    a#basket{
+        display: none;
+    }
+    header{
+        padding: 15px 5px;
+    }
+}
+@media(max-width:987px){
+    .card img{
+        width: 356px;
+    }
 }

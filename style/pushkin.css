@@ -26,9 +26,6 @@ input {
 button {
   border: none; }
 
-img {
-  max-width: 100%; }
-
 /*глобальное исправление*/
 @font-face {
   font-family: Roboto;
@@ -38,7 +35,8 @@ body {
 
 .col {
   max-width: 971px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 header {
   top: 0;
@@ -71,53 +69,115 @@ header {
   margin-right: 15px; }
 
 main {
-  margin-top: 25px;
-  margin-bottom: 35px; }
-  main h2 {
-    color: black;
+  padding-top: 77px; }
+
+.main__restaurant {
+  background: url(../image/restaurant/d42ea9bbf7aff297c2e1eb5e5f3b7fa6-w1080-87.png) 50%/cover no-repeat;
+  width: 100%;
+  height: 361px;
+  display: block; }
+
+.vizit__card {
+  position: absolute;
+  height: 204px;
+  width: 389px;
+  left: 0;
+  top: 80px;
+  border-radius: 2px;
+  background-color: #fff; }
+  .vizit__card h1 {
+    font-weight: 200;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 35px; }
+  .vizit__card h5 {
+    font-weight: 100; }
+
+.description {
+  display: flex;
+  margin-top: 50px;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100%;
+  flex-direction: row; }
+  .description h5 {
+    width: 40%; }
+  .description .time {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 16px; }
+
+ul {
+  display: flex;
+  margin: 20px 0; }
+  ul a {
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 19px;
     letter-spacing: 0em;
     text-align: left;
-    margin-top: 5px; }
-  main h3 {
-    color: black;
+    color: grey;
+    margin-right: 40px; }
+
+span.menu {
+  width: 100%;
+  height: 1px;
+  background-color: #757575;
+  display: block; }
+
+.menu {
+  margin: 50px 0; }
+  .menu h1 {
     font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left; }
+
+.sub__menu {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.dish {
+  display: flex;
+  flex-basis: 45%;
+  margin: 25px 0;
+  height: 160px; }
+
+.dish__col--left {
+  position: relative;
+  flex-basis: 70%;
+  display: flex;
+  border: grey solid 1px; }
+  .dish__col--left h4 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 7px; }
+  .dish__col--left h5 {
+    color: #626262;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    margin-top: 5px; }
-  main input {
-    width: 100%;
-    margin-top: 70px;
-    border: none; }
-  main .input {
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: #757575; }
-  main .heading {
-    font-family: "Roboto";
-    font-weight: 400;
-    margin-top: 50px; }
-  main .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: #000; }
-
-.card {
-  margin: 5px 5px 10px 5px;
-  transition: .7s; }
+    margin: 7px; }
+  .dish__col--left .dish__price {
+    position: absolute;
+    bottom: 7px;
+    left: 7px; }
 
 footer {
-  background-color: #262626; }
+  background-color: #262626;
+  width: 100%; }
 
 .logo {
   margin: 35px 0; }
@@ -193,8 +253,9 @@ select {
   bottom: 25px;
   background: #59BD5A url(../image/icon/button.png) 50% 50% no-repeat; }
 
-.card:hover {
-  filter: contrast(60%); }
+.dish:hover {
+  filter: contrast(60%);
+  transition: .7s; }
 
 button:hover {
   background-color: #ececec;
@@ -204,17 +265,63 @@ a:hover {
   background-color: #c4c1c1;
   transition: .7s; }
 
-@media (min-width: 323px) {
+@media (min-width: 770px) {
   .col {
     padding-left: 15px; } }
+@media (min-width: 322px) and (max-width: 769px) {
+  .dish {
+    width: 100%;
+    flex-basis: 95%;
+    margin-left: auto; }
+
+  .col {
+    margin-left: 10px;
+    margin-right: 10px; } }
 @media (max-width: 322px) {
+  .main__restaurant {
+    background-size: cover; }
+
+  .vizit__card {
+    height: 180px;
+    width: 308px;
+    left: 8px;
+    top: 203px;
+    box-shadow: 0px 0px 16px rgba(117, 117, 117, 0.2);
+    margin-top: 0; }
+
+  .vizit__card h1 {
+    margin-top: 15px; }
+
+  .description {
+    margin-top: 15px;
+    flex-direction: column;
+    width: 100%;
+    height: auto; }
+    .description h5 {
+      width: 100%;
+      margin-top: 5px;
+      text-align: center; }
+    .description .time {
+      width: 35%;
+      text-align: center;
+      margin: 5px auto; }
+
+  ul {
+    display: none; }
+
+  span.menu {
+    display: none; }
+
+  .menu h1 {
+    text-align: center; }
+
+  .dish {
+    flex-basis: 100%; }
+
   a#basket {
     display: none; }
 
   header {
-    padding: 15px 5px; } }
-@media (max-width: 987px) {
-  .card img {
-    width: 356px; } }
+    padding: 20px; } }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=pushkin.css.map */
